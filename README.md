@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Arbitrum Project Hackathon Repository
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Smart Contract Link:** https://thirdweb.com/arbitrum-sepolia/0x23Dbd2cb4113b3090B977fdAd10c0f257fF7be2a
 
-## Available Scripts
+## Team Members:
+Mark Nicholas Cagas | discord: nicooreos
 
-In the project directory, you can run:
+Mark Ilagan | discord: iidabang
 
-### `npm start`
+Hazel Mendoza | discord: sasaki1539
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Dwainne Dyland Zapanta | discord: dzdzdzdzdzdzdz
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About the project
 
-### `npm test`
+**Project Title:** RFID-Enabled Fare Incentivization with Smart Contracts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Overview:**
 
-### `npm run build`
+The RFID-Enabled Fare Incentivization project combines cutting-edge technology with blockchain innovation to revolutionize fare payment systems. Leveraging Solidity-based smart contracts and RFID technology, this project aims to incentivize users to utilize RFID cards for fare payment in a seamless, efficient, and rewarding manner.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Key Components:**
+1. Solidity Smart Contract - Developed as an ERC20 contract, it incorporates specialized functions designed to interact with RFID technology. This smart contract is initially deployed on the ArbitrumSepolia, ensuring transparency, security, and immutability of transactions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. RFID Integration -  The heart of the project lies in its integration of Radio-Frequency Identification (RFID) technology. Each user is provided with an RFID card containing a unique identifier.
 
-### `npm run eject`
+3. STM32 Microcontroller: The RFID reading system is powered by an STM32 Microcontroller. This high-performance microcontroller efficiently processes RFID data, enabling seamless communication between RFID cards and the smart contract.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Functionality:**
+1. Fare Payment - Users can conveniently pay for fares by tapping their RFID cards on designated readers. The STM32 Microcontroller captures the RFID data and initiates a transaction through the Solidity smart contract
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Incentivization Mechanism: The smart contract is programmed to incentivize users for utilizing RFID cards for fare payment. Through predefined algorithms and reward structures, users earn tokens or other benefits each time they utilize their RFID cards, encouraging widespread adoption and usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Transaction Verification: Every fare payment transaction is securely recorded on the blockchain. Users can verify their transactions in real-time, ensuring transparency and accountability within the system.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Benefits**
+1. Efficiency - The integration of RFID technology streamlines the fare payment process, reducing transaction times and enhancing user experience.
 
-## Learn More
+2. Transparency: By leveraging blockchain technology, the system ensures transparent and auditable transactions, mitigating the risk of fraud or tampering.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Incentivization: The incentivization mechanism encourages users to adopt RFID-based fare payment, leading to increased usage and customer loyalty.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Future Developments**
 
-### Code Splitting
+1. Scalability: The project is designed to be scalable, accommodating a growing user base and expanding transportation networks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Integration with Mobile Platforms: Future iterations may explore integration with mobile applications, allowing users to manage their RFID cards and monitor incentives conveniently from their smartphones.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Enhanced Security Features: Continuous enhancements in security protocols will be implemented to safeguard user data and prevent unauthorized access or misuse.
