@@ -1,6 +1,7 @@
 # Arbitrum Project Hackathon Repository
 
-**Smart Contract Link:** https://sepolia-explorer.arbitrum.io/address/0xD777fe83A62d693f8d3E8995078fD469147f0F00
+**Smart Contract Link:** https://sepolia-explorer.arbitrum.io/address/0xD777fe83A62d693f8d3E8995078fD469147f0F00 
+
 **PARA Token Address:** 0xD777fe83A62d693f8d3E8995078fD469147f0F00
 
 ## Team Members:
