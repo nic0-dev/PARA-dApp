@@ -1,29 +1,10 @@
 {
-<<<<<<< HEAD
-  "name": "project-bantay-dashboard",
-=======
   "name": "para-app",
->>>>>>> master
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-<<<<<<< HEAD
-    "@mui/icons-material": "^5.15.19",
-    "@mui/material": "^5.15.19",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "chart.js": "^4.4.3",
-    "chartjs-adapter-date-fns": "^3.0.0",
-    "firebase": "^10.12.2",
-    "react": "^18.3.1",
-    "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-=======
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
     "@testing-library/jest-dom": "^5.17.0",
@@ -46,7 +27,6 @@
     "browserify-zlib": "latest",
     "assert": "^2.0.0",
     "stream": "^0.0.2"
->>>>>>> master
   },
   "scripts": {
     "start": "react-scripts start",

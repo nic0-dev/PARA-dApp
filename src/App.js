@@ -1,13 +1,5 @@
 import './App.css';
 import LandingPage from './LandingPage';
-<<<<<<< HEAD
-
-function App() {
-  return (
-    <div className="App">
-      <LandingPage />
-    </div>
-=======
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 
 const activeChain = "arbitrum-sepolia";
@@ -22,12 +14,7 @@ function App() {
         <LandingPage />
       </div>
     </ThirdwebProvider>
->>>>>>> master
   );
 }
 
 export default App;
-<<<<<<< HEAD
-=======
-
->>>>>>> master
