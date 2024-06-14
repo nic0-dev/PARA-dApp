@@ -13,10 +13,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from './ToggleColorMode';
 import Link from '@mui/material/Link';
 
+import GithubIcon from '@mui/icons-material/GitHub';
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import logo from './logo.png';
 import { IconButton } from '@mui/material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useTheme } from '@mui/material/styles';
 
 
@@ -65,16 +65,16 @@ function AppAppBar({ mode, toggleColorMode }) {
 
             {/* Project Name */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 10, color: isDarkMode ? '#ffffff' : '#000000', textAlign: 'center', flexGrow: 1, justifyContent: 'center' }}>
-              <Link color="text.secondary" href="https://www.behance.net/gallery/193530817/Mark-Design-Portfolio">
+              <Link color="text.secondary" href="#">
                 Home
               </Link>
-              <Link color="text.secondary" href={`${process.env.PUBLIC_URL}/CAGAS_MARK_NICHOLAS_RESUME.pdf`}>
+              <Link color="text.secondary" href="#">
+                Account
+              </Link>
+              <Link color="text.secondary" href="#">
                 How it Works
               </Link>
-              <Link color="text.secondary" href="https://www.linkedin.com/in/marknicholascagas/">
-                Rewards
-              </Link>
-              <Link color="text.secondary" href="https://github.com/nic0-dev">
+              <Link color="text.secondary" href="#">
                 Contact
               </Link>
             </Box>
@@ -85,8 +85,13 @@ function AppAppBar({ mode, toggleColorMode }) {
             {/* Theme and User Icons */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: { xs: 0.2, sm: 0.5 }, alignItems: 'center', color: isDarkMode ? '#ffffff' : '#000000' }}>
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <IconButton color="inherit">
-                <AccountCircleIcon />
+              <IconButton
+                color="inherit"
+                href="https://github.com/nic0-dev"
+                aria-label="GitHub"
+                sx={{ alignSelf: 'center' }}
+              >
+                <GithubIcon />
               </IconButton>
             </Box>
 
@@ -114,7 +119,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Link color="text.secondary" href="https://www.linkedin.com/in/marknicholascagas/">
                     LinkedIn
                   </Link>
-                  <Link color="text.secondary" href="https://github.com/nic0-dev">
+                  <Link color="text.secondary" href="https://github.com/nic0-dev/PARA-dApp">
                     Github
                   </Link>
                   </Box>

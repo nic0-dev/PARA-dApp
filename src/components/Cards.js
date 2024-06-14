@@ -2,14 +2,19 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import PeopleIcon from '@mui/icons-material/People';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
-import ThermostatIcon from '@mui/icons-material/Thermostat';
-import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useTheme } from '@mui/material/styles';
+import logo from './logo-white.png';
 
-import { ref, onValue } from 'firebase/database';
-import database from '../firebaseConfig';
+// Sample data
+const sampleData = {
+  userId: '0x88043579',
+  currentBalance: '₱150.00',
+  walletAddress: '0x1234567890ABCDEF1234567890ABCDEF12345678',
+  tokenBalance: '10 $PARA'
+};
 
 export default function Cards() {
 
@@ -22,94 +27,55 @@ export default function Cards() {
       : 'linear-gradient(45deg, #ffffff 0%, #eeeeee 100%)';
   };
 
-  const [currentData, setCurrentData] = React.useState({
-    peopleInside: 0,
-    userId: '',
-    temperature: 0,
-    direction: '',
-    lastUpdated: ''
-  });
-
-  React.useEffect(() => {
-    const dataRef = ref(database, 'sensorData');
-    onValue(dataRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        const sortedData = Object.entries(data)
-          .map(([id, value]) => ({ id, ...value }))
-          .sort((a, b) => b.id - a.id);
-        const mostRecent = sortedData[0];
-
-        const peopleInside = sortedData.reduce((count, entry) => {
-          return entry.Direction === 'ENTER' ? count + 1 : count - 1;
-        }, 0);
-
-        setCurrentData({
-          peopleInside,
-          userId: mostRecent.RFID,
-          temperature: mostRecent.Temperature,
-          direction: mostRecent.Direction,
-          lastUpdated: formatTimestamp(mostRecent.id)
-        });
-      }
-    });
-  }, []);
-
-  const formatTimestamp = (timestamp) => {
-    const year = timestamp.substring(0, 4);
-    const month = timestamp.substring(4, 6);
-    const day = timestamp.substring(6, 8);
-    const hour = timestamp.substring(8, 10);
-    const minute = timestamp.substring(10, 12);
-    const second = timestamp.substring(12, 14);
-    const date = new Date(`${year}-${month}-${day}T${hour}:${minute}:${second}`);
-    return date.toLocaleString();
-  };
-
   return (
-    <Box component="section" sx={{mt: {xs: 10, md: 15}}} py={2}>
+    <Box component="section" sx={{ mt: { xs: 10, md: 15 } }} py={2}>
       <Box sx={{ maxWidth: 'lg', mx: 'auto', px: 4 }}>
-        <Box sx={{ display: 'flex', mb: 2, alignItems: 'center'}}>
-          <Box sx={{mr: 2}}><Typography variant="h5" sx={{ fontSize: { xs: '1rem', sm: '1.25rem' }}}>Current Reading: </Typography></Box>
-          <Typography color='#918E97' variant="body1" sx={{ fontSize: { xs: '0.6rem', sm: '1rem' }}}>(Last Updated: {currentData.lastUpdated})</Typography>
+        <Box sx={{ display: 'flex', mb: 2, alignItems: 'center' }}>
+          <Box sx={{ mr: 2 }}>
+            <Typography variant="h5" sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>User Information: </Typography>
+          </Box>
         </Box>
 
-        <Box sx={{ display: 'flex', gap: 2, justifyContent: 'space-between', flexDirection: { xs: 'column', sm: 'row' }}}>
-          <Paper  sx={{ flex: '1 1 25%', p: 2, background: 'linear-gradient(135deg, #ec765b 0%, #E84420 100%)', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
+        <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', mb: 2 }}>
+          <Paper sx={{ flex: '1 1 100%', p: 2, background: 'linear-gradient(135deg, #ec765b 0%, #E84420 100%)', border: '1px solid', borderColor: 'divider', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 48, height: 48, backgroundColor: 'black', borderRadius: 2, mb: 1 }}>
-              <PeopleIcon fontSize="large" />
+              <AccountBalanceWalletIcon fontSize="large" />
+            </Box >
+            <Box sx={{ color: isDarkMode ? '#ffffff' : '#000000' }}>
+              <Typography>Wallet Address</Typography>
+              <Typography variant="h5" sx={{ wordBreak: 'break-all'}}>{sampleData.walletAddress}</Typography>
             </Box>
-            <Typography>No. of People Inside</Typography>
-            <Typography variant="h4">{currentData.peopleInside}</Typography>
           </Paper>
+        </Box>
 
-          <Paper sx={{ flex: '1 1 25%', p: 2, background: getPaperBackground(), border: '1px solid', borderColor: 'divider', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
+        <Box sx={{ display: 'flex', gap: 2, justifyContent: 'space-between', flexDirection: { xs: 'column', sm: 'row' } }}>
+          <Paper sx={{ flex: '1 1 30%', p: 2, background: getPaperBackground(), color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 48, height: 48, backgroundColor: '#1c2529', borderRadius: 2, mb: 1 }}>
+              <AccountCircleIcon fontSize="large" />
+            </Box>
+            <Box sx={{ color: isDarkMode ? '#ffffff' : '#000000' }}>
+              <Typography>User ID</Typography>
+              <Typography variant="h4">{sampleData.userId}</Typography>
+            </Box>
+          </Paper>
+          
+          <Paper sx={{ flex: '1 1 30%', p: 2, background: getPaperBackground(), border: '1px solid', borderColor: 'divider', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 48, height: 48, backgroundColor: '#1c2529', borderRadius: 2, mb: 1 }}>
               <CreditCardIcon fontSize="large" />
             </Box>
-            <Box sx={{color: isDarkMode ? '#ffffff' : '#000000'}}>
-              <Typography>User ID</Typography>
-              <Typography variant="h4">{currentData.userId}</Typography>
+            <Box sx={{ color: isDarkMode ? '#ffffff' : '#000000' }}>
+              <Typography>Current Balance (PHP)</Typography>
+              <Typography variant="h4">{sampleData.currentBalance}</Typography>
             </Box>
           </Paper>
 
-          <Paper sx={{ flex: '1 1 25%', p: 2, background: getPaperBackground(), border: '1px solid', borderColor: 'divider', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
+          <Paper sx={{ flex: '1 1 30%', p: 2, background: getPaperBackground(), border: '1px solid', borderColor: 'divider', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 48, height: 48, backgroundColor: '#1c2529', borderRadius: 2, mb: 1 }}>
-              <ThermostatIcon fontSize="large" />
-            </Box >
-            <Box sx={{color: isDarkMode ? '#ffffff' : '#000000'}}>
-              <Typography>Body Temperature</Typography>
-              <Typography variant="h4">{currentData.temperature} °C</Typography>
+              <Box component="img" src={logo} alt="Logo" sx={{ height: { xs: 25, sm: 40 } }} />
             </Box>
-          </Paper>
-
-          <Paper sx={{ flex: '1 1 25%', p: 2, background: getPaperBackground(), border: '1px solid', borderColor: 'divider', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: 2 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 48, height: 48, backgroundColor: '#1c2529', borderRadius: 2, mb: 1 }}>
-              <CompareArrowsRoundedIcon fontSize="large" />
-            </Box>
-            <Box sx={{color: isDarkMode ? '#ffffff' : '#000000'}}>
-              <Typography>Direction</Typography>
-              <Typography variant="h4">{currentData.direction}</Typography>
+            <Box sx={{ color: isDarkMode ? '#ffffff' : '#000000' }}>
+              <Typography>Token Balance ($PARA)</Typography>
+              <Typography variant="h4">{sampleData.tokenBalance}</Typography>
             </Box>
           </Paper>
         </Box>

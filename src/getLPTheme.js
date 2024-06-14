@@ -2,16 +2,16 @@ import { alpha } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 export const brand = {
-  50: '#F0F7FF',
-  100: '#e8e5ff',
-  200: '#8c80ff',
-  300: '#5f4dff',
-  400: '#311aff',
-  500: '#1700e6',
-  600: '#1200b3',
-  700: '#0d0080',
-  800: '#08004d',
-  900: '#03001a',
+  50: '#d4eaee',
+  100: '#a9d4de',
+  200: '#69b4c5',
+  300: '#2894ac',
+  400: '#20768a',
+  500: '#185967',
+  600: '#144a56',
+  700: '#0c2c34',
+  800: '#081e22',
+  900: '#040f11',
 };
 
 export const secondary = {

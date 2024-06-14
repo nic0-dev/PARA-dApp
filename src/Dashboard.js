@@ -7,7 +7,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import NavBar from './components/NavBar';
 import Cards from './components/Cards';
 import Table from './components/Table'
-import Charts from './components/Charts'
 import Footer from './components/Footer';
 import getLPTheme from './getLPTheme';
 
@@ -27,7 +26,6 @@ export default function LandingPage() {
       <Box sx={{ bgcolor: 'background.default' }}>
         <Cards />
         <Table />
-        <Charts />
         <Divider />
         <Footer />
       </Box>
