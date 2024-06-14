@@ -82,7 +82,7 @@ export default function Footer() {
               'aria-label': 'Enter your email address',
             }}
           />
-          <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
+          <Button variant="contained" color="primary" sx={{ flexShrink: 0, boxShadow: '0 0 5px #5497D5'}}>
             Subscribe
           </Button>
         </Stack>
@@ -92,13 +92,13 @@ export default function Footer() {
 
       <Box sx={{ display: 'flex', justifyContent: 'space-between', pt: { xs: 4, sm: 8 }, width: '100%', borderTop: '1px solid', borderColor: 'divider'}}>
         <div>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="">
             Privacy Policy
           </Link>
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="">
             Terms of Service
           </Link>
           <Copyright />
@@ -108,10 +108,10 @@ export default function Footer() {
           <IconButton color="inherit" href="https://github.com/nic0-dev/PARA-dApp" aria-label="GitHub" sx={{ alignSelf: 'center' }}>
             <GithubIcon />
           </IconButton>
-          <IconButton color="inherit" href="#" aria-label="Facebook" sx={{ alignSelf: 'center' }}>
+          <IconButton color="inherit" href="" aria-label="Facebook" sx={{ alignSelf: 'center' }}>
             <FacebookIcon />
           </IconButton>
-          <IconButton color="inherit" href="https://www.linkedin.com/in/marknicholascagas/" aria-label="LinkedIn" sx={{ alignSelf: 'center' }}>
+          <IconButton color="inherit" href="" aria-label="LinkedIn" sx={{ alignSelf: 'center' }}>
             <LinkedInIcon />
           </IconButton>
         </Stack>

@@ -312,45 +312,24 @@ export default function getLPTheme(mode) {
                 background: brand[500],
                 backgroundImage: `linear-gradient(to bottom, ${brand[400]}, ${brand[400]})`,
                 boxShadow: `inset 0 1px ${alpha(brand[300], 0.4)}`,
-                outline: `1px solid ${brand[700]}`,
-                '&:hover': {
-                  background: brand[300],
-                  backgroundImage: 'none',
-                  boxShadow: `0 0 0 1px  ${alpha(brand[300], 0.5)}`,
-                },
+                outline: `1px solid ${brand[600]}`,
               }),
             ...(ownerState.variant === 'outlined' && {
               backgroundColor: alpha(brand[300], 0.1),
               borderColor: brand[300],
               color: brand[500],
-              '&:hover': {
-                backgroundColor: alpha(brand[300], 0.3),
-                borderColor: brand[200],
-              },
             }),
             ...(ownerState.variant === 'text' && {
               color: brand[500],
-              '&:hover': {
-                backgroundColor: alpha(brand[300], 0.3),
-                borderColor: brand[200],
-              },
             }),
             ...(theme.palette.mode === 'dark' && {
               ...(ownerState.variant === 'outlined' && {
                 backgroundColor: alpha(brand[600], 0.1),
                 borderColor: brand[700],
                 color: brand[300],
-                '&:hover': {
-                  backgroundColor: alpha(brand[600], 0.3),
-                  borderColor: brand[700],
-                },
               }),
               ...(ownerState.variant === 'text' && {
                 color: brand[300],
-                '&:hover': {
-                  backgroundColor: alpha(brand[600], 0.3),
-                  borderColor: brand[700],
-                },
               }),
             }),
           }),
