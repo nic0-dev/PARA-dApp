@@ -30,6 +30,7 @@ function AppAppBar({ mode, toggleColorMode, scrollToSection }) {
   const handleLinkClick = (event, section) => {
     event.preventDefault();
     scrollToSection(section);
+    setOpen(false); // Close the drawer after navigating to the section
   };
 
   return (
@@ -67,7 +68,7 @@ function AppAppBar({ mode, toggleColorMode, scrollToSection }) {
             {/* Spacer */}
             <Box sx={{ flexGrow: 1 }} />
 
-            {/* Project Name */}
+            {/* Navigation Links */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 10, color: isDarkMode ? '#ffffff' : '#000000', textAlign: 'center', flexGrow: 1, justifyContent: 'center' }}>
               <Link color="text.secondary" href="#" onClick={(e) => handleLinkClick(e, 'home')}>Home</Link>
               <Link color="text.secondary" href="#" onClick={(e) => handleLinkClick(e, 'account')}>Account</Link>
@@ -86,7 +87,8 @@ function AppAppBar({ mode, toggleColorMode, scrollToSection }) {
               </IconButton>
             </Box>
 
-            <Box sx={{ display: { sm: '', md: 'none' } }}>
+            {/* Mobile Menu */}
+            <Box sx={{ display: { xs: 'block', md: 'none' } }}>
               <Button variant="text" color="primary" aria-label="menu" onClick={toggleDrawer(true)} sx={{ minWidth: '30px', p: '4px' }}>
                 <MenuIcon />
               </Button>
