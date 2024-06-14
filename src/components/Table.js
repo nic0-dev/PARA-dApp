@@ -52,8 +52,7 @@ export default function DisplayTable() {
               <TableRow>
                 <TableCell align="left">UID</TableCell>
                 <TableCell align="left">Email</TableCell>
-                <TableCell align="left">Temperature (°C)</TableCell>
-                <TableCell align="left">Direction</TableCell>
+                <TableCell align="left">Balance</TableCell>
                 <TableCell align="left">Timestamp</TableCell>
               </TableRow>
             </TableHead>
@@ -62,8 +61,7 @@ export default function DisplayTable() {
                 <TableRow key={row.id}>
                   <TableCell component="th" scope="row">{row.RFID}</TableCell>
                   <TableCell align="left">{''}</TableCell>
-                  <TableCell align="left">{row.Temperature}</TableCell>
-                  <TableCell align="left">{row.Direction}</TableCell>
+                  <TableCell align="left">{''}</TableCell>
                   <TableCell align="left">{formatTimestamp(row.id)}</TableCell>
                 </TableRow>
               ))}
