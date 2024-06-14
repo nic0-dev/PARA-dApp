@@ -32,6 +32,7 @@ export default function LandingPage() {
   };
 
   return (
+<<<<<<< HEAD
     <ThemeProvider theme={LPtheme}>
       <CssBaseline />
       <NavBar mode={mode} toggleColorMode={toggleColorMode} scrollToSection={scrollToSection} />
@@ -44,5 +45,19 @@ export default function LandingPage() {
         <Box id="contact"><Footer /></Box>
       </Box>
     </ThemeProvider>
+=======
+      <ThemeProvider theme={LPtheme}>
+        <CssBaseline />
+        <NavBar mode={mode} toggleColorMode={toggleColorMode} scrollToSection={scrollToSection} />
+        <Box sx={{ bgcolor: 'background.default' }}>
+          <Box id="home"><Hero /></Box>
+          <Box id="account"><Cards /></Box>
+          <Box><Table /></Box>
+          <Box id="howItWorks"><InfoCards /></Box>
+          <Divider />
+          <Box id="contact"><Footer /></Box>
+        </Box>
+      </ThemeProvider>
+>>>>>>> master
   );
 }

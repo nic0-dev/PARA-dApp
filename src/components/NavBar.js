@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import * as React from 'react';
+=======
+import React from 'react';
+>>>>>>> master
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
@@ -17,7 +21,13 @@ import logo from './logo.png';
 import { IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
+<<<<<<< HEAD
 function AppAppBar({ mode, toggleColorMode, scrollToSection }) {
+=======
+import { ConnectWallet } from '@thirdweb-dev/react';
+
+function NavBar({ mode, toggleColorMode, scrollToSection }) {
+>>>>>>> master
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
 
@@ -81,10 +91,19 @@ function AppAppBar({ mode, toggleColorMode, scrollToSection }) {
 
             {/* Theme and User Icons */}
             <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: { xs: 0.2, sm: 0.5 }, alignItems: 'center', color: isDarkMode ? '#ffffff' : '#000000' }}>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
               <IconButton color="inherit" href="https://github.com/nic0-dev/PARA-dApp" aria-label="GitHub" sx={{ alignSelf: 'center' }}>
                 <GithubIcon />
               </IconButton>
+<<<<<<< HEAD
+=======
+
+              <ConnectWallet theme="dark" btnTitle="Connect Wallet" style={{ margin: '12px', fontSize: '0.75rem'}} connectModal={{size: "compact", titleIcon: "", showThirdwebBranding: false }}/>
+>>>>>>> master
             </Box>
 
             {/* Mobile Menu */}
@@ -118,10 +137,18 @@ function AppAppBar({ mode, toggleColorMode, scrollToSection }) {
   );
 }
 
+<<<<<<< HEAD
 AppAppBar.propTypes = {
+=======
+NavBar.propTypes = {
+>>>>>>> master
   mode: PropTypes.oneOf(['dark', 'light']).isRequired,
   toggleColorMode: PropTypes.func.isRequired,
   scrollToSection: PropTypes.func.isRequired,
 };
 
+<<<<<<< HEAD
 export default AppAppBar;
+=======
+export default NavBar;
+>>>>>>> master

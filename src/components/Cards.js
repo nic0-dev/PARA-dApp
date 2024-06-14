@@ -8,19 +8,38 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useTheme } from '@mui/material/styles';
 import logo from './logo-white.png';
 
+<<<<<<< HEAD
+=======
+import { useAddress, useToken, useTokenBalance } from '@thirdweb-dev/react';
+
+>>>>>>> master
 // Sample data
 const sampleData = {
   userId: '0x88043579',
   currentBalance: '₱150.00',
+<<<<<<< HEAD
   walletAddress: '0x1234567890ABCDEF1234567890ABCDEF12345678',
   tokenBalance: '10 $PARA'
 };
 
+=======
+};
+
+const tokenAddress = "0xD777fe83A62d693f8d3E8995078fD469147f0F00";
+
+>>>>>>> master
 export default function Cards() {
 
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
 
+<<<<<<< HEAD
+=======
+  const address = useAddress();
+  const tokenContract = useToken(tokenAddress);
+  const { data: tokenBalance, isLoading } = useTokenBalance(tokenContract, address);
+
+>>>>>>> master
   const getPaperBackground = () => {
     return isDarkMode
       ? 'linear-gradient(45deg, #111719 0%, #090E10 100%)'
@@ -43,7 +62,11 @@ export default function Cards() {
             </Box >
             <Box sx={{ color: isDarkMode ? '#ffffff' : '#000000' }}>
               <Typography>Wallet Address</Typography>
+<<<<<<< HEAD
               <Typography variant="h5" sx={{ wordBreak: 'break-all'}}>{sampleData.walletAddress}</Typography>
+=======
+              <Typography variant="h5" sx={{ wordBreak: 'break-all'}}>{address ? address : 'Not connected'}</Typography>
+>>>>>>> master
             </Box>
           </Paper>
         </Box>
@@ -75,7 +98,11 @@ export default function Cards() {
             </Box>
             <Box sx={{ color: isDarkMode ? '#ffffff' : '#000000' }}>
               <Typography>Token Balance ($PARA)</Typography>
+<<<<<<< HEAD
               <Typography variant="h4">{sampleData.tokenBalance}</Typography>
+=======
+              <Typography variant="h4">{isLoading ? 'Loading...' : tokenBalance?.displayValue ? `${tokenBalance.displayValue} $PARA` : '0 $PARA'}</Typography>
+>>>>>>> master
             </Box>
           </Paper>
         </Box>
